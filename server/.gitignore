@@ -1,0 +1,14 @@
+node_modules
+.env
+data/
+uploads/*
+!uploads/blender.png
+!uploads/blender_2.png
+!uploads/blender_3.png
+!uploads/cleaner.png
+!uploads/groomer.png
+!uploads/kneepads.png
+!uploads/scrubber.png
+!uploads/straightener.png
+!uploads/trimmer.png
+npm-debug.log
