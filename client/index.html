@@ -41,9 +41,40 @@
       }
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7082567772841888" crossorigin="anonymous"></script>
-      <!-- Adsterra Monetization Scripts -->
-    <script type="text/javascript" src="//pl29699078.effectivecpmnetwork.com/58/66/d3/5866d3432f83691273cd5c762c8d4134.js" async></script>
-    <script type="text/javascript" src="//pl29699081.effectivecpmnetwork.com/03/2e/85/032e85b1d2a3f18fec146117de239aaa.js" async></script>
+          <!-- Adsterra Monetization Scripts (Lazy Loaded) -->
+    <script type="text/javascript">
+      (function() {
+        var initialized = false;
+        function loadAdsterra() {
+          if (initialized) return;
+          initialized = true;
+          
+          var s1 = document.createElement('script');
+          s1.type = 'text/javascript';
+          s1.src = '//pl29699078.effectivecpmnetwork.com/58/66/d3/5866d3432f83691273cd5c762c8d4134.js';
+          s1.async = true;
+          document.head.appendChild(s1);
+
+          var s2 = document.createElement('script');
+          s2.type = 'text/javascript';
+          s2.src = '//pl29699081.effectivecpmnetwork.com/03/2e/85/032e85b1d2a3f18fec146117de239aaa.js';
+          s2.async = true;
+          document.head.appendChild(s2);
+        }
+        
+        var events = ['scroll', 'mousemove', 'touchstart', 'keydown'];
+        function handleInteraction() {
+          loadAdsterra();
+          events.forEach(function(e) {
+            window.removeEventListener(e, handleInteraction);
+          });
+        }
+        
+        events.forEach(function(e) {
+          window.addEventListener(e, handleInteraction, { passive: true });
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
