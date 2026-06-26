@@ -40,7 +40,7 @@
         fbq('track', 'PageView');
       }
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7082567772841888" crossorigin="anonymous"></script>
+    
           <!-- Adsterra Monetization Scripts (Lazy Loaded) -->
     <script type="text/javascript">
       (function() {
@@ -48,6 +48,13 @@
         function loadAdsterra() {
           if (initialized) return;
           initialized = true;
+          
+          var adsense = document.createElement('script');
+          adsense.type = 'text/javascript';
+          adsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7082567772841888';
+          adsense.async = true;
+          adsense.crossOrigin = 'anonymous';
+          document.head.appendChild(adsense);
           
           var s1 = document.createElement('script');
           s1.type = 'text/javascript';
